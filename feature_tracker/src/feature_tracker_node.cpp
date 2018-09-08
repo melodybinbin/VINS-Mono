@@ -25,6 +25,11 @@ bool first_image_flag = true;
  * @brief ROS的图像回调函数，对新来的图像进行特征点追踪，发布
  * 
  * 使用createCLAHE对图像进行自适应直方图均衡化
+ * 自适应直方图均衡化(AHE)是用来提升图像的对比度的一种计算机图像处理技术。
+ * CLAHE同普通的自适应直方图均衡不同的地方主要是其对比度限幅。
+ * 这个特性也可以应用到全局直方图均衡化中，即构成所谓的限制对比度直方图均衡（CLHE），
+ * 但这在实际中很少使用。在CLAHE中，对于每个小区域都必须使用对比度限幅，CLAHE主要是用来克服AHE的过度放大噪音的问题。
+ 
  * calcOpticalFlowPyrLK() LK金字塔光流法，生成tracking的特征点
  * undistroted特征点
  * 然后把追踪的特征点发布到名字为pub_img的话题下，图像发布在在pub_match下
